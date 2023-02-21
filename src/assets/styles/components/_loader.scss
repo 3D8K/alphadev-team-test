@@ -1,0 +1,42 @@
+.loader {
+  position: relative;
+  display: flex;
+  width: 250px;
+  height: 250px;
+  border-radius: 100%;
+  background: conic-gradient( #534878, #060606 );
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  animation: Rotate 2s linear infinite;
+
+  &:before, &:after {
+    content: "";
+    z-index: 2;
+    position: absolute;
+  }
+
+  &:before {
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    background: #060606;
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+  }
+
+  &:after {
+    background: #534878;
+    top: 0;
+    width: 25px;
+    height: 25px;
+    border-radius: 100%;
+  }
+
+  @keyframes Rotate {
+    100% {
+      transform: rotate(-360deg);
+    }
+  }
+}
